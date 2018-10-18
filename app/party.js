@@ -155,7 +155,7 @@ class Party {
     }
 
     if (this.messagesSinceDeletionScheduled % 5 === 1) {
-      const timeUntilDeletion = moment(this.deletionTime).fromNow();
+      const timeUntilDeletion = moment(this.deletionTime).add(settings.tzOffset, 'hours').fromNow();
 
       PartyManager.getChannel(this.channelId)
         .then(channelResult => {
