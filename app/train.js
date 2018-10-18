@@ -29,7 +29,7 @@ class RaidTrain extends Party {
     // add some extra train data to remember
     train.createdById = memberId;
     train.sourceChannelId = sourceChannelId;
-    train.creationTime = moment().valueOf();
+    train.creationTime = moment().add(settings.tzOffset, 'hours').valueOf();
 
     train.trainName = trainName;
     train.gymId = undefined;

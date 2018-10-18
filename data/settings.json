@@ -33,5 +33,6 @@
     "roles",
     "notifications",
     "util"
-  ]
+  ],
+  "tzOffset":-2
 }

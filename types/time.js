@@ -17,7 +17,7 @@ class TimeType extends Commando.ArgumentType {
   validate(value, message, arg) {
     const isExRaid = this.isExclusiveRaid(value, message, arg),
       partyExists = PartyManager.validParty(message.channel.id),
-      now = moment(),
+      now = moment().add(settings.tzOffset, 'hours'),
       partyCreationTime = partyExists ?
         moment(PartyManager.getParty(message.channel.id).creationTime) :
         now,
@@ -163,7 +163,7 @@ class TimeType extends Commando.ArgumentType {
   parse(value, message, arg) {
     const isExRaid = this.isExclusiveRaid(value, message, arg),
       partyExists = PartyManager.validParty(message.channel.id),
-      now = moment(),
+      now = moment().add(settings.tzOffset, 'hours'),
       partyCreationTime = partyExists ?
         moment(PartyManager.getParty(message.channel.id).creationTime) :
         now,

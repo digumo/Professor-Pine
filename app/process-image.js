@@ -535,7 +535,7 @@ class ImageProcessing {
           phoneTime = moment(phoneTime, ['hmm a', 'h:m a']);
         } else {
           // figure out if time should be AM or PM
-          const now = moment(),
+          const now = moment().add(settings.tzOffset, 'hours'),
             timeAM = moment(phoneTime + ' am', ['hmm a', 'Hmm', 'h:m a', 'H:m']),
             timePM = moment(phoneTime + ' pm', ['hmm a', 'Hmm', 'h:m a', 'H:m']),
             times = [timeAM.diff(now), timePM.diff(now)];
