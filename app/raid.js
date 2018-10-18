@@ -36,7 +36,7 @@ class Raid extends Party {
       raid.createdById = memberId;
       raid.isExclusive = !!pokemon.exclusive;
       raid.sourceChannelId = sourceChannelId;
-      raid.creationTime = moment().valueOf();
+      raid.creationTime = moment().add(settings.tzOffset, 'hours').valueOf();
       raid.lastPossibleTime = raid.creationTime + (raid.isExclusive ?
         (settings.exclusiveRaidIncubateDuration + settings.exclusiveRaidHatchedDuration) * 60 * 1000 :
         (settings.standardRaidIncubateDuration + settings.standardRaidHatchedDuration) * 60 * 1000);
@@ -606,7 +606,7 @@ class Raid extends Party {
         `EX Raid against ${pokemon}` :
         `Level ${this.pokemon.tier} Raid against ${pokemon}`,
 
-      now = moment(),
+      now = moment().add(settings.tzOffset, 'hours'),
 
       calendarFormat = {
         sameDay: 'LT',

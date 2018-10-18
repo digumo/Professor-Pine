@@ -14,12 +14,12 @@ process.nextTick(() => {
 
 class PartyManager {
   constructor() {
-    let lastIntervalTime = moment().valueOf(),
-      lastIntervalDay = moment().dayOfYear();
+    let lastIntervalTime = moment().add(settings.tzOffset, 'hours').valueOf(),
+      lastIntervalDay = moment().add(settings.tzOffset, 'hours').dayOfYear();
 
     // loop to clean up raids periodically
     this.update = setInterval(() => {
-      const nowMoment = moment(),
+      const nowMoment = moment().add(settings.tzOffset, 'hours'),
         nowDay = nowMoment.dayOfYear(),
         now = nowMoment.valueOf(),
         startClearTime = now + (settings.startClearTime * 60 * 1000),
