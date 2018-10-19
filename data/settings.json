@@ -25,7 +25,7 @@
     "bot-lab": "the-bot-lab",
     "mod-bot-lab": "mod-bot-only",
     "unown": "unown-sightings",
-    "ex-gym-raids": "potential-ex-gym-raids"
+    "ex-gym-raids": "ex-gym-raids"
   },
   "helpGroups": [
     "basic-raid",
