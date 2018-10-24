@@ -773,7 +773,8 @@
     "name": "togepi"
   },
   {
-    "name": "togetic"
+    "name": "togetic",
+    "tier": 4
   },
   {
     "name": "natu"
@@ -1795,7 +1796,10 @@
   },
   {
     "name": "giratina_altered",
-    "overrideName": "Giratina - Altered",
+    "overrideName": "Giratina",
+    "nickname": [
+      "altered"
+    ],
     "tier":  5
   },
   {
